@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Code - Micah Loraine R. Puno</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        .page-content {
+            min-height: 100vh;
+            padding: 140px 20px 60px;
+            background: #f9f9f9;
+            color: #162415;
+        }
+
+        .content-container {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .page-title {
+            color: #162415;
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+        }
+
+        .page-title span {
+            color: #78005a;
+        }
+
+        .about-card {
+            background: white;
+            padding: 30px;
+            margin-top: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .about-card p {
+            line-height: 1.8;
+            color: #1f1d1f;
+        }
+
+        .code-container {
+            background: #1e1e1e;
+            padding: 20px;
+            margin-top: 15px;
+            border-radius: 10px;
+            overflow-x: auto;
+        }
+
+        .code-container h3 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .code-container pre {
+            white-space: pre;
+            overflow-x: auto;
+            tab-size: 4;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .code-container code {
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 14px;
+            color: #d4d4d4;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="navbar">
+            <h1>Micah Loraine R. Puno</h1>
+
+            <nav>
+                <ul class="nav-links">
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="personalinformation.html">Personal Information</a></li>
+                  <li><a href="educationalbackground.html">Educational Background</a></li>
+                  <li><a href="skills.html">Skills</a></li>
+                  <li><a href="javacode.html">Java Code</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <div class="content-container">
+
+            <h2 class="page-title">Java <span>Code</span></h2>
+
+            <p>Here's my Java source code of my developed console-based game!</p>
+
+            <div class="code-container">
+                <h3>Jumbled Letters Word Game</h3>
+                <pre><code class="language-java">
+import java.util.Random; 
+import java.util.Scanner; 
+
+public class JumbledLettersWordGame { 
+    static String scramble(String word, Random rand) { 
+
+        char[] letters = word.toCharArray();
+        String result = word; 
+
+        while (result.equals(word)) { 
+            for (int i = letters.length - 1; i > 0; i--) { 
+                int j = rand.nextInt(i + 1);
+                char temp = letters[i];
+                letters[i] = letters[j];
+                letters[j] = temp;
+            }
+            result = new String(letters);
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        Random rand = new Random();
+
+        String[] words = {"JAVA", "PROGRAMMING", "COMPUTER", "TECHNOLOGY", "CODING"};
+        
+        int score = 0;
+        int rounds = 3;
+        
+        System.out.println("=================================");
+        System.out.println("   JUMBLED LETTERS WORD GAME");
+        System.out.println("=================================");
+        System.out.println("Welcome to Jumbled letters word game! Unscramble the word! You only have 3 tries in each word.");
+        
+        for (int r = 1; r <= rounds; r++) {
+            
+            String word = words[rand.nextInt(words.length)];
+            
+            String jumbled = scramble(word, rand);
+            int points = 10;
+            boolean solved = false;
+            
+            System.out.println("--- Word " + r + " of " + rounds + " ---");
+            System.out.println("Jumbled: " + jumbled.toUpperCase());
+             
+            
+            int tries = 3;
+            while (tries > 0 && !solved) {
+                System.out.print("Your answer (" + tries + " tries left): ");
+                String answer = input.next().toUpperCase();
+            
+                if (answer.equals(word)) {
+                    System.out.println("Correct! +10 points");
+                    score += 10;
+                    solved = true;
+                } else {
+                    tries--;
+                    System.out.println("Wrong Word!");
+                }
+            }
+            
+            if (!solved) {
+                System.out.println("Out of tries! The word is: " + word);
+            }
+            
+            System.out.println("Total Score: " + score);
+        }
+
+            System.out.println("==========================================");
+            System.out.println("Game is over! Your Final score is: " + score + " / " + (rounds * 10));
+            System.out.println("Thanks for playing!");
+            System.out.println("==========================================");
+        
+        input.close();
+    }
+}
+                </code></pre>
+            </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

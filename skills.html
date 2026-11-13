@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Skills - Micah Loraine R. Puno</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        .skills-section {
+            min-height: 100vh;
+            padding: 150px 20px 60px;
+            background-color: #f9f9f9;
+            color: #162415;
+        }
+
+        .skills-container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .skills-title {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+        }
+
+        .skills-title span {
+            color: #78005a;
+        }
+
+        .skills-intro {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 35px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .skills-card {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 25px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+            text-decoration: none;
+            color: #162415;
+            transition: transform 0.3s ease,
+                        box-shadow 0.3s ease;
+            overflow-wrap: anywhere;
+        }
+
+        .skills-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .skills-details p {
+            color: #666;
+            overflow-wrap: anywhere;
+            line-height: 1.5;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="navbar">
+            <h1 class="logo">Micah Loraine R. Puno</h1>
+
+            <nav>
+                <ul class="nav-links">
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="personalinformation.html">Personal Information</a></li>
+                  <li><a href="educationalbackground.html">Educational Background</a></li>
+                  <li><a href="skills.html">Skills</a></li>
+                  <li><a href="javacode.html">Java Code</a></li>
+            </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="skills-section">
+        <div class="skills-container">
+
+            <h2 class="skills-title">
+                My <span>Skills</span>
+            </h2>
+
+            <p class="skills-intro">
+                Here are some of my techinical skills, programming skills, and other relevant competencies.
+            </p>
+
+            <div class="skills-grid">
+
+                <a class="skills-card">
+                    <div class="skills-details">
+                        <p>I have knowledge and skills on installing and configuring computer systems, setting
+                            up computer networks and computer servers, and maintaining and repairing 
+                            computer systems and networks. 
+                        </p>
+                    </div>
+                </a>
+                
+                <a class="skills-card">
+                    <div class="skills-details">
+                        <p>I know how to edit photos and videos using different editing applications, 
+                            such as Canva, Adobe Photoshop, and CapCut.
+                        </p>
+                    </div>
+                </a>
+
+                <a class="skills-card">
+                    <div class="skills-details">
+                        <p>I know how to use different application software for various tasks, such as 
+                            Microsoft Word, Microsoft PowerPoint, and Microsoft Excel.
+                        </p>
+                    </div>
+                </a>
+
+                <a class="skills-card">
+                    <div class="skills-details">
+                        <p>I am a TVL-ICT student when I was a senior high school student. One of the important 
+                            tasks of TVL-ICT students is to undergo training in CSS NC II. I underwent that 
+                            training and completed it. After our training, just a few weeks later, we had our CSS 
+                            NC II Assessment under the Joint Delivery Voucher Program in partnership with Innovative 
+                            Skills Development and Assessment Center. I passed and received NC II.
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
